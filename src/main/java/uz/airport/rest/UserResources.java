@@ -1,5 +1,6 @@
 package uz.airport.rest;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import uz.airport.dto.ResponseDto;
@@ -11,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("user")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "Authorization")
 public class UserResources {
     private final UserService userService;
 

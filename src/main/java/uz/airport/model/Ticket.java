@@ -1,5 +1,9 @@
-package uz.airport.dto;
+package uz.airport.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +15,11 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TicketDto {
+@Entity
+public class Ticket {
+    @Id
+    @GeneratedValue(generator = "ticketSeqId")
+    @SequenceGenerator(name = "ticketSeqId", sequenceName = "ticket_seq_id", allocationSize = 1)
     private Integer id;
     private String firstName;
     private String lastName;

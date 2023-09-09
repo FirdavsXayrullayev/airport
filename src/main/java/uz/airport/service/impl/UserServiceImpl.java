@@ -126,7 +126,7 @@ public class UserServiceImpl implements UserService {
                     .build();
         }catch (Exception e){
             return ResponseDto.<UserDto>builder()
-                    .code(-1)
+                    .code(1)
                     .data(userDto)
                     .message("Database Error")
                     .success(false)
